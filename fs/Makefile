@@ -1,10 +1,10 @@
-AR	=gar
-AS	=gas
-CC	=gcc
-LD	=gld
-CFLAGS	=-Wall -O -fstrength-reduce -fcombine-regs -fomit-frame-pointer \
-	-mstring-insns -nostdinc -I../include
-CPP	=gcc -E -nostdinc -I../include
+AR	=i686-linux-gnu-ar
+AS	=i686-linux-gnu-as
+CC	=gcc-4.8
+LD	=i686-linux-gnu-ld
+CFLAGS	=-Wall -O -std=gnu89 -fstrength-reduce -fomit-frame-pointer -m32 \
+         -nostdinc -I../include
+CPP	=gcc-4.8 -E -nostdinc -I../include
 
 .c.s:
 	$(CC) $(CFLAGS) \

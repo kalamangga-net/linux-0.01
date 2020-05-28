@@ -4,16 +4,16 @@
 # remove them from the CFLAGS defines.
 #
 
-AS86	=as -0 -a
+AS86	=i686-linux-gnu-as -0 -a
 CC86	=cc -0
-LD86	=ld -0
+LD86	=i686-linux-gnu-ld -0
 
-AS	=gas
-LD	=gld
+AS	=i686-linux-gnu-as
+LD	=i686-linux-gnu-ld
 LDFLAGS	=-s -x -M
-CC	=gcc
-CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer -fcombine-regs
-CPP	=gcc -E -nostdinc -Iinclude
+CC	=gcc-4.8
+CFLAGS	=-Wall -O -std=gnu89 -fstrength-reduce -fomit-frame-pointer -fno-stack-protector -fno-builtin -g -m32
+CPP	=gcc-4.8 -E -nostdinc -Iinclude
 
 ARCHIVES=kernel/kernel.o mm/mm.o fs/fs.o
 LIBS	=lib/lib.a

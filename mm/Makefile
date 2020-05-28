@@ -1,10 +1,10 @@
-CC	=gcc
-CFLAGS	=-O -Wall -fstrength-reduce -fcombine-regs -fomit-frame-pointer \
+CC	=gcc-4.8
+CFLAGS	=-O -Wall -std=gnu89 -fstrength-reduce -fomit-frame-pointer \
 	-finline-functions -nostdinc -I../include
-AS	=gas
-AR	=gar
-LD	=gld
-CPP	=gcc -E -nostdinc -I../include
+AS	=i686-linux-gnu-as
+AR	=i686-linux-gnu-ar
+LD	=i686-linux-gnu-ld
+CPP	=gcc-4.8 -E -nostdinc -I../include
 
 .c.o:
 	$(CC) $(CFLAGS) \
